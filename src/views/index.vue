@@ -3,7 +3,7 @@
  * @Description: 页面入口
  * @Date: 2023-08-30 13:30:26
  * @LastEditors: along
- * @LastEditTime: 2023-09-06 15:57:11
+ * @LastEditTime: 2023-09-06 15:58:50
  * @FilePath: /cxy-food-menu/src/views/index.vue
 -->
 <template>
