@@ -1,0 +1,7 @@
+/node_modules/
+/public/
+/dist/
+postcss.config.js
+.vscode
+.idea
+auto-import.d.ts
