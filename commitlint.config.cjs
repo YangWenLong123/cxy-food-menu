@@ -1,8 +1,8 @@
 /*
- * @Author: along
+ * @Author: zxx
  * @Description:
  * @Date: 2023-08-30 15:01:38
- * @LastEditors: along
+ * @LastEditors: zxx
  * @LastEditTime: 2023-08-30 15:01:50
  * @FilePath: /cxy-v3-template/commitlint.config.cjs
  */

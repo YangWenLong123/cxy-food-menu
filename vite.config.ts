@@ -1,8 +1,8 @@
 /*
- * @Author: along
+ * @Author: zxx
  * @Description:
  * @Date: 2023-08-30 13:22:11
- * @LastEditors: along
+ * @LastEditors: zxx
  * @LastEditTime: 2023-09-06 15:28:15
  * @FilePath: /cxy-food-menu/vite.config.ts
  */

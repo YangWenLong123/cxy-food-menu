@@ -1,9 +1,9 @@
 <!--
- * @Author: along
+ * @Author: zxx
  * @Description: 页面入口
  * @Date: 2023-08-30 13:30:26
  * @LastEditors: along
- * @LastEditTime: 2023-09-06 15:52:36
+ * @LastEditTime: 2023-09-06 15:55:03
  * @FilePath: /cxy-food-menu/src/views/index.vue
 -->
 <template>

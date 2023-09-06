@@ -1,8 +1,8 @@
 /*
- * @Author: along
+ * @Author: zxx
  * @Description: 路由配置
  * @Date: 2023-08-30 14:50:34
- * @LastEditors: along
+ * @LastEditors: zxx
  * @LastEditTime: 2023-09-06 15:29:06
  * @FilePath: /cxy-food-menu/src/router/index.ts
  */

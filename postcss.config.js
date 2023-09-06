@@ -1,8 +1,8 @@
 /*
- * @Author: along
+ * @Author: zxx
  * @Description:
  * @Date: 2023-08-30 16:18:25
- * @LastEditors: along
+ * @LastEditors: zxx
  * @LastEditTime: 2023-09-06 15:49:24
  * @FilePath: /cxy-food-menu/postcss.config.js
  */
