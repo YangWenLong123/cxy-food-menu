@@ -1,9 +1,9 @@
 /*
- * @Author: zxx
+ * @Author: along
  * @Description:
  * @Date: 2023-08-30 13:22:11
- * @LastEditors: zxx
- * @LastEditTime: 2023-09-06 15:50:54
+ * @LastEditors: along
+ * @LastEditTime: 2023-09-11 13:07:33
  * @FilePath: /cxy-food-menu/src/main.ts
  */
 import {createApp} from 'vue';
@@ -11,7 +11,6 @@ import {createPinia} from 'pinia';
 import {createPersistedState} from 'pinia-persistedstate-plugin';
 import App from './App.vue';
 import router from './router';
-import 'lib-flexible';
 
 const app = createApp(App);
 const store = createPinia();

@@ -1,9 +1,9 @@
 /*
- * @Author: zxx
+ * @Author: along
  * @Description:
  * @Date: 2023-08-30 17:51:28
- * @LastEditors: zxx
- * @LastEditTime: 2023-09-06 15:51:43
+ * @LastEditors: along
+ * @LastEditTime: 2023-09-11 13:29:04
  * @FilePath: /cxy-food-menu/src/service/axios.ts
  */
 import axios, {AxiosResponse, AxiosRequestConfig} from 'axios';
@@ -46,6 +46,8 @@ service.interceptors.response.use(
 		// 	// message.error(error);
 		// 	return Promise.reject(error);
 		// }
+
+		return Promise.reject(error);
 	}
 );
 
