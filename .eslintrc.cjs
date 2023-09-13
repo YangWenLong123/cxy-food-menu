@@ -2,9 +2,9 @@
  * @Author: along
  * @Description:
  * @Date: 2023-08-30 14:50:34
- * @LastEditors: zxx
- * @LastEditTime: 2023-08-30 18:30:55
- * @FilePath: /cxy-v3-template/.eslintrc.cjs
+ * @LastEditors: along
+ * @LastEditTime: 2023-09-13 15:19:41
+ * @FilePath: /cxy-food-menu/.eslintrc.cjs
  */
 /* eslint-env node */
 require('@rushstack/eslint-patch/modern-module-resolution');
@@ -23,5 +23,6 @@ module.exports = {
 	rules: {
 		'vue/multi-word-component-names': 'off',
 		'no-unsafe-optional-chaining': 'off',
+		'no-undef': 'off',
 	},
 };

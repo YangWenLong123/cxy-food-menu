@@ -17,7 +17,7 @@
 		"lint": "eslint . --fix && pnpm prettier",
 		"prettier": "prettier --write src/",
 		"commitlint": "commitlint --config commitlint.config.cjs -e -V",
-		"lint-staged": "lint-staged"
+		"prepare": "husky install"
 	},
 	"dependencies": {
 		"axios": "^1.5.0",

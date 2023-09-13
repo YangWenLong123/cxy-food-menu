@@ -1,12 +1,4 @@
-<!--
- * @Author: along
- * @Description:
- * @Date: 2023-08-30 15:03:40
- * @LastEditors: along
- * @LastEditTime: 2023-09-11 13:37:55
- * @FilePath: /cxy-food-menu/.husky/pre-commit
--->
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
 
-. "$(dirname "$0")/\_/husky.sh"
-
-pnpm commitlint
+npx lint-staged --allow-empty ）
