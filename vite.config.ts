@@ -2,8 +2,8 @@
  * @Author: along
  * @Description:
  * @Date: 2023-08-30 13:22:11
- * @LastEditors: zxx
- * @LastEditTime: 2023-09-06 15:28:15
+ * @LastEditors: along
+ * @LastEditTime: 2023-09-13 15:56:11
  * @FilePath: /cxy-food-menu/vite.config.ts
  */
 import path from 'node:path';
@@ -78,6 +78,7 @@ export default defineConfig(({mode}) => {
 		resolve: {
 			alias: {
 				'~': path.resolve(__dirname, './src'),
+				'@': path.resolve(__dirname, './src'),
 			},
 		},
 		define: {

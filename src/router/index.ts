@@ -2,8 +2,8 @@
  * @Author: along
  * @Description: 路由配置
  * @Date: 2023-08-30 14:50:34
- * @LastEditors: zxx
- * @LastEditTime: 2023-09-06 15:29:06
+ * @LastEditors: along
+ * @LastEditTime: 2023-09-13 15:54:11
  * @FilePath: /cxy-food-menu/src/router/index.ts
  */
 import {createRouter, createWebHistory} from 'vue-router';
@@ -13,7 +13,7 @@ const routes: RouteRecordRaw[] = [
 	{
 		path: '/',
 		name: 'Index',
-		component: import('~/views/index.vue'),
+		component: import('~/views/index/index.vue'),
 	},
 ];
 
