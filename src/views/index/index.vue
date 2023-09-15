@@ -3,11 +3,14 @@
  * @Description: 页面入口
  * @Date: 2023-08-30 13:30:26
  * @LastEditors: along
- * @LastEditTime: 2023-09-13 15:58:03
+ * @LastEditTime: 2023-09-14 11:14:28
  * @FilePath: /cxy-food-menu/src/views/index/index.vue
 -->
 <template>
 	<div class="CxyHome">
+		<img src="@/assets/images/home.webp" alt="" />
+		<img src="@/assets/images/home.webp" alt="" />
+		<img src="@/assets/images/home.webp" alt="" />
 		<img src="@/assets/images/home.webp" alt="" />
 	</div>
 </template>

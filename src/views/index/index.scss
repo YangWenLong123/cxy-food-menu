@@ -1,9 +1,11 @@
 .CxyHome {
 	width: 100vw;
-	height: 100vh;
+	height: 200vh;
 	background-color: #fef84f;
 	display: flex;
 	justify-content: center;
+	flex-direction: column;
+	align-items: center;
 	img {
 		width: 200px;
 		height: 200px;
