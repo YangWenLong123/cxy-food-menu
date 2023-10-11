@@ -1,14 +1,28 @@
-.CxyHome {
+.CxyIndex {
 	width: 100vw;
-	height: 200vh;
+	height: 100vh;
 	background-color: #fef84f;
 	display: flex;
-	justify-content: center;
 	flex-direction: column;
 	align-items: center;
+	position: relative;
 	img {
 		width: 200px;
 		height: 200px;
-		margin-top: 20vh;
+		margin-top: 10vh;
+	}
+	.button {
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%);
+		bottom: 140px;
+		width: 160px;
+		border-radius: 8px;
+		border: 2px #020005 solid;
+		height: 32px;
+		text-align: center;
+		color: #020005;
+		line-height: 32px;
+		font-weight: bold;
 	}
 }

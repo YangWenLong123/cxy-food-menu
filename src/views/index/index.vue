@@ -3,26 +3,25 @@
  * @Description: 页面入口
  * @Date: 2023-08-30 13:30:26
  * @LastEditors: along
- * @LastEditTime: 2023-09-14 11:14:28
+ * @LastEditTime: 2023-10-11 15:39:35
  * @FilePath: /cxy-food-menu/src/views/index/index.vue
 -->
 <template>
-	<div class="CxyHome">
+	<div class="CxyIndex">
 		<img src="@/assets/images/home.webp" alt="" />
-		<img src="@/assets/images/home.webp" alt="" />
-		<img src="@/assets/images/home.webp" alt="" />
-		<img src="@/assets/images/home.webp" alt="" />
+
+		<div class="button" @click="onNext()">开始干饭</div>
 	</div>
 </template>
 
 <script lang="ts" setup>
-// import {useLoginStore} from '~/stores';
-// const {userInfo} = useLoginStore();
-// import api from '~/api';
+import router from '~/router';
 
-onMounted(() => {
-	// api.login({account: '123'});
-});
+const onNext = () => {
+	router.push({name: 'Home'});
+};
+
+onMounted(() => {});
 </script>
 
 <style lang="scss" scoped>

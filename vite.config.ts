@@ -3,7 +3,7 @@
  * @Description:
  * @Date: 2023-08-30 13:22:11
  * @LastEditors: along
- * @LastEditTime: 2023-09-13 15:56:11
+ * @LastEditTime: 2023-10-11 15:23:56
  * @FilePath: /cxy-food-menu/vite.config.ts
  */
 import path from 'node:path';
@@ -22,6 +22,7 @@ export default defineConfig(({mode}) => {
 	console.log(config);
 
 	return {
+		base: './',
 		plugins: [
 			vue(),
 			vueJsx(),
