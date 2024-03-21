@@ -7,22 +7,22 @@
 	align-items: center;
 	position: relative;
 	img {
-		width: 200px;
-		height: 200px;
+		width: 400px;
+		height: 400px;
 		margin-top: 10vh;
 	}
 	.button {
 		position: absolute;
 		left: 50%;
 		transform: translate(-50%);
-		bottom: 140px;
-		width: 160px;
-		border-radius: 8px;
-		border: 2px #020005 solid;
-		height: 32px;
+		bottom: 280px;
+		width: 320px;
+		border-radius: 16px;
+		border: 4px #020005 solid;
+		height: 64px;
 		text-align: center;
 		color: #020005;
-		line-height: 32px;
+		line-height: 64px;
 		font-weight: bold;
 	}
 }

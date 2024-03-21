@@ -3,7 +3,7 @@
  * @Description: 路由配置
  * @Date: 2023-08-30 14:50:34
  * @LastEditors: along
- * @LastEditTime: 2023-10-11 15:53:47
+ * @LastEditTime: 2024-03-21 11:05:17
  * @FilePath: /cxy-food-menu/src/router/index.ts
  */
 import {createRouter, createWebHistory} from 'vue-router';
@@ -39,6 +39,11 @@ const routes: RouteRecordRaw[] = [
 		path: '/search',
 		name: 'Search',
 		component: () => import('~/views/search/index.vue'),
+	},
+	{
+		path: '/preview',
+		name: 'Preview',
+		component: () => import('~/views/preview/index.vue'),
 	},
 ];
 
