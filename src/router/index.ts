@@ -1,55 +1,36 @@
-/*
- * @Author: along
- * @Description: 路由配置
- * @Date: 2023-08-30 14:50:34
- * @LastEditors: along
- * @LastEditTime: 2024-03-21 11:05:17
- * @FilePath: /cxy-food-menu/src/router/index.ts
- */
-import {createRouter, createWebHistory} from 'vue-router';
-import type {RouteRecordRaw} from 'vue-router';
-
-const routes: RouteRecordRaw[] = [
-	{
-		path: '/',
-		name: 'Index',
-		component: () => import('~/views/index/index.vue'),
-	},
-	{
-		path: '/home',
-		name: 'Home',
-		component: () => import('~/views/home/index.vue'),
-	},
-	{
-		path: '/cook',
-		name: 'Cook',
-		component: () => import('~/views/cook/index.vue'),
-	},
-	{
-		path: '/my',
-		name: 'My',
-		component: () => import('~/views/my/index.vue'),
-	},
-	{
-		path: '/record',
-		name: 'Record',
-		component: () => import('~/views/record/index.vue'),
-	},
-	{
-		path: '/search',
-		name: 'Search',
-		component: () => import('~/views/search/index.vue'),
-	},
-	{
-		path: '/preview',
-		name: 'Preview',
-		component: () => import('~/views/preview/index.vue'),
-	},
-];
+import {
+  createRouter,
+  createWebHistory,
+  type RouteLocationNormalized
+} from "vue-router";
+import routes from "./routes";
+import { useCachedViewStoreHook } from "@/store/modules/cachedView";
+import NProgress from "@/utils/progress";
+import setPageTitle from "@/utils/set-page-title";
 
 const router = createRouter({
-	history: createWebHistory(),
-	routes,
+  history: createWebHistory(),
+  routes
+});
+
+export interface toRouteType extends RouteLocationNormalized {
+  meta: {
+    title?: string;
+    noCache?: boolean;
+  };
+}
+
+router.beforeEach((to: toRouteType, from, next) => {
+  NProgress.start();
+  // 路由缓存
+  useCachedViewStoreHook().addCachedView(to);
+  // 页面 title
+  setPageTitle(to.meta.title);
+  next();
+});
+
+router.afterEach(() => {
+  NProgress.done();
 });
 
 export default router;

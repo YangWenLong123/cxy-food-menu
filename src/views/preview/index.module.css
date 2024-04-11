@@ -2,7 +2,7 @@
 	width: 100vw;
 	height: 100vh;
 	overflow: hidden;
-	background-color: #1e1e20;
+	background-color: #2D2E31;
 	display: flex;
 	flex-direction: column;
 }
@@ -10,10 +10,10 @@
 .phone {
 	width: 375px;
 	height: 667px;
-	background-color: #fff;
 	overflow: hidden;
 	cursor: pointer;
 	margin-left: 50%;
 	transform: translateX(-50%);
 	margin-top: 60px;
+	background-color: #2D2E31;
 }

@@ -1,0 +1,96 @@
+.cxyHeaderComponents {
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 62px;
+	padding: 0 64px;
+	color: #000;
+	background-color: #2D2E31;
+
+	// border-bottom: 1px #000000 solid;
+	.left {
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+
+		img {
+			width: 24px;
+			height: 24px;
+			margin-right: 8px;
+		}
+
+		.left_title {
+			font-size: 16px;
+			color: rgb(255 255 245 / 86%);
+			white-space: nowrap;
+		}
+	}
+
+	.right {
+		display: flex;
+		align-items: center;
+
+		.items {
+			display: flex;
+			align-items: center;
+			padding: 0 12px;
+
+			.item {
+				display: flex;
+				align-items: center;
+				cursor: pointer;
+
+				.item_text {
+					color: rgb(255 255 245 / 86%);
+
+					font-size: 14px;
+					white-space: nowrap;
+
+					&:hover {
+						color: #12a272;
+					}
+				}
+
+				i {
+					margin-left: 4px;
+					font-size: 12px;
+					color: #68686e;
+					transform: scale(0.9);
+				}
+
+				.active {
+					color: #12a272;
+				}
+			}
+		}
+
+		.lines {
+			width: 1px;
+			height: 24px;
+			margin: 0 24px 0 16px;
+			background-color: rgb(82 82 89 / 32%);
+		}
+
+		.icon-github {
+			font-size: 20px;
+			color: #dfdfd6;
+			cursor: pointer;
+		}
+	}
+}
+
+.git {
+	width: 24px;
+	cursor: pointer;
+	&:hover {
+		opacity: 0.8;
+	}
+}
+
+.area {
+	font-size: 10px;
+	&:hover {
+		opacity: 0.8;
+	}
+}

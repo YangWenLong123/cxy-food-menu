@@ -3,10 +3,12 @@
  * @Description:
  * @Date: 2024-03-21 11:22:55
  * @LastEditors: along
- * @LastEditTime: 2024-03-21 11:36:21
- * @FilePath: /cxy-food-menu/src/components/header/index.vue
+ * @LastEditTime: 2024-04-10 14:23:57
+ * @FilePath: /cxy-food-menu/src/components/Header/index.vue
 -->
 <script setup lang="ts">
+import {reactive} from 'vue'
+
 const state = reactive({
 	iconList: [
 		{
@@ -66,6 +68,6 @@ const onGitHub = () => {
 	</div>
 </template>
 
-<style lang="scss" scoped>
-@import url('./index.scss');
+<style lang="less" scoped>
+@import url('./index.less');
 </style>

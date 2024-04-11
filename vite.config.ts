@@ -1,89 +1,80 @@
-/*
- * @Author: along
- * @Description:
- * @Date: 2023-08-30 13:22:11
- * @LastEditors: along
- * @LastEditTime: 2023-10-11 15:23:56
- * @FilePath: /cxy-food-menu/vite.config.ts
- */
-import path from 'node:path';
-import {defineConfig, loadEnv, splitVendorChunkPlugin} from 'vite';
-import vue from '@vitejs/plugin-vue';
-import vueJsx from '@vitejs/plugin-vue-jsx';
-import AutoImport from 'unplugin-auto-import/vite';
-import commpressPlugin from 'vite-plugin-compression';
-import {VantResolver} from '@vant/auto-import-resolver';
-import Components from 'unplugin-vue-components/vite';
+import { fileURLToPath, URL } from "node:url";
+import { defineConfig, loadEnv } from "vite";
+import vue from "@vitejs/plugin-vue";
+import vueJsx from "@vitejs/plugin-vue-jsx";
+import Components from "unplugin-vue-components/vite";
+import { VantResolver } from "unplugin-vue-components/resolvers";
+import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
+import path from "path";
+import mockDevServerPlugin from "vite-plugin-mock-dev-server";
+import vueSetupExtend from "vite-plugin-vue-setup-extend";
+import viteCompression from "vite-plugin-compression";
+import { createHtmlPlugin } from "vite-plugin-html";
+import { enableCDN } from "./build/cdn";
+
+// 当前工作目录路径
+const root: string = process.cwd();
 
 // https://vitejs.dev/config/
-export default defineConfig(({mode}) => {
-	const config = loadEnv(mode, __dirname);
-
-	console.log(config);
-
-	return {
-		base: './',
-		plugins: [
-			vue(),
-			vueJsx(),
-			AutoImport({
-				include: [/\.[tj]sx?$/, /\.vue$/, /\.vue\?vue/],
-				imports: ['vue', 'pinia', 'vue-router'],
-				// 调整自动引入的文件位置
-				dts: './auto-import.d.ts',
-				// 解决自动引入eslint报错问题 需要在eslintrc的extend选项中引入
-				eslintrc: {
-					enabled: true,
-					// 配置文件的位置
-					filepath: './.eslintrc-auto-import.json',
-					globalsPropValue: true,
-				},
-			}),
-			Components({resolvers: [VantResolver()]}),
-			commpressPlugin({
-				verbose: true, // 默认即可
-				disable: false, // 开启压缩(不禁用)，默认即可
-				deleteOriginFile: false, // 删除源文件
-				threshold: 1, // 压缩前最小文件大小
-				algorithm: 'gzip', // 压缩算法
-				ext: '.gz', // 文件类型
-			}),
-			splitVendorChunkPlugin(),
-		],
-		css: {
-			preprocessorOptions: {
-				scss: {
-					javascriptEnabled: true,
-				},
-			},
-		},
-		server: {
-			host: '0.0.0.0',
-			port: config.VITE_APP_PORT,
-			open: true,
-		},
-		build: {
-			chunkSizeWarningLimit: 2000,
-			rollupOptions: {
-				output: {
-					chunkFileNames: 'assets/js/[name]-[hash].js',
-					entryFileNames: 'assets/js/[name]-[hash].js',
-					assetFileNames: 'assets/[ext]/[name]-[hash].[ext]',
-				},
-			},
-		},
-		esbuild: {
-			pure: ['console.log'],
-			minify: true,
-		},
-		resolve: {
-			alias: {
-				'~': path.resolve(__dirname, './src'),
-				'@': path.resolve(__dirname, './src'),
-			},
-		},
-		define: {
-			__APP_ENV__: JSON.stringify(config.VITE_APP_API_BASE_URL),
-		},
-	};
+export default defineConfig(({ mode }) => {
+  // 环境变量
+  const env = loadEnv(mode, root, "");
+  return {
+    base: env.VITE_PUBLIC_PATH || "/",
+    plugins: [
+      vue(),
+      vueJsx(),
+      mockDevServerPlugin(),
+      // vant 组件自动按需引入
+      Components({
+        dts: "src/typings/components.d.ts",
+        resolvers: [VantResolver()]
+      }),
+      // svg icon
+      createSvgIconsPlugin({
+        // 指定图标文件夹
+        iconDirs: [path.resolve(root, "src/icons/svg")],
+        // 指定 symbolId 格式
+        symbolId: "icon-[dir]-[name]"
+      }),
+      // 允许 setup 语法糖上添加组件名属性
+      vueSetupExtend(),
+      // 生产环境 gzip 压缩资源
+      viteCompression(),
+      // 注入模板数据
+      createHtmlPlugin({
+        inject: {
+          data: {
+            ENABLE_ERUDA: env.VITE_ENABLE_ERUDA || "false"
+          }
+        }
+      }),
+      // 生产环境默认不启用 CDN 加速
+      enableCDN(env.VITE_CDN_DEPS)
+    ],
+    resolve: {
+      alias: {
+        "@": fileURLToPath(new URL("./src", import.meta.url))
+      }
+    },
+    server: {
+      host: true,
+      // 仅在 proxy 中配置的代理前缀， mock-dev-server 才会拦截并 mock
+      // doc: https://github.com/pengzhanbo/vite-plugin-mock-dev-server
+      proxy: {
+        "^/dev-api": {
+          target: ""
+        }
+      }
+    },
+    build: {
+      rollupOptions: {
+        output: {
+          chunkFileNames: "static/js/[name]-[hash].js",
+          entryFileNames: "static/js/[name]-[hash].js",
+          assetFileNames: "static/[ext]/[name]-[hash].[ext]"
+        }
+      }
+    }
+  };
 });
