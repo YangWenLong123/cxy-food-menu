@@ -1,0 +1,24 @@
+.refresh {
+  height: calc(100vdh - 100px);
+  overflow: hidden;
+}
+
+.box {
+  width: 375px;
+  box-sizing: border-box;
+  padding: 24px 12px 0 12px;
+  display: flex;
+  flex-wrap: wrap;
+  height: calc(100vdh - 145px);
+  overflow-y: auto;
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  justify-content: center;
+  font-size: 13px;
+  width: 375px;
+  height: 20px;
+}

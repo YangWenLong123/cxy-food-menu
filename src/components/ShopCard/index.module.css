@@ -1,0 +1,37 @@
+.card {
+  width: 168px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card:nth-child(even) {
+  margin-left: 15px;
+}
+
+.img {
+  width: 168px;
+}
+
+.ellipsis {
+  width: 150px;
+  margin-left: 9px;
+  font-size: 13px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-top: 6px;
+}
+
+.wrap{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 6px;
+  width: 150px;
+  font-size: 12px;
+}

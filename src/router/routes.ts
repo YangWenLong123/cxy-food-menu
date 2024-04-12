@@ -41,8 +41,7 @@ const routes: Array<RouteRecordRaw> = [
           title: "我的",
           noCache: true
         }
-      },
-      
+      }
     ]
   },
   {
