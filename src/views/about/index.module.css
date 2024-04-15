@@ -1,0 +1,31 @@
+.box {
+  width: 375px;
+  height: calc(100dvh - 96px);
+  box-sizing: border-box;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.card {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 24px 24px;
+  display: flex;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.nickname {
+  font-size: 20px;
+  position: relative;
+  top: -4px;
+}
+
+.data {
+  font-size: 12px;
+  border: 1px ;
+}

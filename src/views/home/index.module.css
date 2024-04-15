@@ -1,5 +1,5 @@
 .refresh {
-  height: calc(100vdh - 100px);
+  height: calc(100dvh - 100px);
   overflow: hidden;
 }
 
@@ -9,7 +9,7 @@
   padding: 24px 12px 0 12px;
   display: flex;
   flex-wrap: wrap;
-  height: calc(100vdh - 145px);
+  height: calc(100dvh - 145px);
   overflow-y: auto;
 }
 
